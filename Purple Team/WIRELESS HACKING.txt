@@ -1,0 +1,61 @@
+iw dev
+
+concepts: 
+
+SSID 
+BBSID
+ESSID
+
+WPA WPA2 WEP
+
+WPA2 4 way handshake
+agar hum  handshake ko capture krlon to me wifi ko crack krskta
+
+2 modes hone chaheye 
+monitor mode 
+packet injection mode
+
+aircrack-ng used
+
+monitor mode on krrahe 
+=> airmong-ng start wlan0
+=> airodump-ng wlan0
+
+wifi me authentication me epol hota
+=> aiodump-ng wlan0 --bssid MAC(BSSID) -c(channel) {number}
+=> aireplay-ng -0 1000 -a mac'net -c device_inside --channel {number}
+
+=> aircrack-ng pcap_file rockyou.txt
+
+
+
+EVIL TWIN ATTACK
+hum net device ka ik evil twin banarahe ik trf hum deauth krrahe or secondly hum ik fake access point banate 
+same ssid or same MAC spoof 
+
+windwos me hamey NETNTLM
+NETNTLM 
+triple DES hota (crack.sh) pr jakr hum NETNTLM ko NTLM me convert krte phir hashcat ke through crack krte
+android cleartext
+
+eaphammer
+-----> malware ko bhi send krskta
+-----> username id and pwd deta
+
+
+relay attack
+
+Challange response ko relay krdeta 
+MITM ke andr relay bhi istemal krskta
+1) client ko deauth kia 
+2) apne apko connect kia client se
+3) client se hash recieve hua 
+4) using the hash recieced by client hum ne usko forward krdia (as response of challange) Access point ko 
+# hum ne client hone ka dawa kia ke me client hun or usko hash forward krdia wo khud 
+
+
+
+ 
+
+
+

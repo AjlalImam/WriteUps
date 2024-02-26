@@ -1,0 +1,80 @@
+Sir Ahsan Faraz
+
+Cyber Security 
+                    a)   Security solution
+1) EDR + NDR + XDR
+2) SIEM 
+3) DLP (Data Lost Prevention)
+4) Email solution
+5) IPS + IDS
+	            b)    Managed Services
+Third party to manage services
+		    c) Govern
+same churan different name
+
+----------HBL
+--------------->>>wrong calls 
+ 
+
+EndPoint Security
+
+options:-
+a) Monitor
+b)Usb device control
+c) Configure 
+* prevention policy: 
+software \ hardware \ firmware \cloud ML \ no exe  => Enable all
+
+SIEM 
+firewall => manage DNS server
+Linux\windows => 
+
+
+
+
+
+---------------------------
+2 kam ap ko ane chaheye   |
+1) VAPT(strong)		  |
+2) SIEM usecases (SPLUNK) |
+3) SOC(not deep)          |
+4) DFIR                   | 
+---------------------------
+---------------------------------------------------------
+CV ME LIKHO as an experience				|
+Splunk ki installation and integrated devices on splunk |
+---------------------------------------------------------
+Threat hunting 
+
+-----------------
+Mitre Framework |
+-----------------
+
+-----------------------------------------------------------------------------------------------
+Sir Osama
+multiple integrated device in a live environment
+
+SPLUNK used for monitoring SERVERS 
+endpoint managed by EDR
+
+LINUX logs are in different log files so either we can merge them at forwarder or we can get them individual files
+WINDOWS logs event no 846
+
+SOURCE Type  
+we have indexers where we can chose to assign ids for specific category etc 
+
+search source=WinEventlogs
+shows all the windows devices 
+
+Microsoft Sentinel
+SIEM for cloud
+
+
+
+
+
+
+
+
+
+

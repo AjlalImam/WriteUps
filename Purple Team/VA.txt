@@ -1,0 +1,84 @@
+VA => Vulnerability assessment
+false positive are greater
+
+Nessus best
+SSL issues, older versions are reported
+view severity level of each VA.
+Essential versions are free 
+
+openvas another VA tool but update late
+Nexpose
+
+CVE.org
+
+CVE-year of discovery -ID
+eg:-
+CVE-2020-1988
+
+
+Pentesting 
+Privilage escilation
+
+Windows me 3 users user,Administrator,system Account
+system Account highest level of privilage
+windows ki services wo hain jo boot ke sath hon 
+sb se acha tareka in services ke sath enter ho
+path ko hijack krlo 
+ziada tar quataion me lika hota path("")
+ye path batata ke .exe file kahan hai take booth ke waqt sath run hoske
+
+cmd => sc query # gives info about all services
+cmd => sc qc 'services ka name' # gives info about a specific service startmode 
+
+ExploitDB => search for unquoted serice path
+
+## shorter version of above commands
+wmic service get name,displayname,pathname,startmode |findstr /i "auto" |findstr /i /v "c:\windows\\" |findstr /i /v """
+
+icacls ## gives info about current dir and permission given to users
+# F full access | M Modifying  | R read | X execute
+
+icacls "path" \grant 
+{PERMISSION} : Permission can be:
+R - Read
+W - Write
+C - Change (write)
+F - Full control
+
+
+
+
+peass-ng best script
+tells us how to escilate your privilage
+
+
+Linux 
+curl peeas link | bash
+
+Websites 
+Vookie vegabids.com
+
+both are webapp VA's
+Acunetix and netsparker
+netsparker is better
+wpscan for wordpress
+google =>inurl:wp-jason
+cloudfalre internal ip disclosure
+
+wpscan --url 'url to be checked' --api-token 'token given after login'
+wappalyzer extension to check backend of any website 
+
+SSRF apne server se dosre server ko zombi banadon
+CSRF target pr user ke behalf pr attack krna
+
+nessus ke backend pr portscan nmap hai
+target net id or domain 
+ping the remote host ko off krke scan kren
+fagile devices devices that can not handle traffic
+port scan range
+UDP pr false positive ke chances ziada hai
+Accuracy me show false positive or not 
+SMTP scanning
+BruteForce attack
+scan for malware to detect wheather a pc was already effected or not
+plugins ko apne hisab se select kren 

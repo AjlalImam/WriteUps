@@ -1,0 +1,82 @@
+OSINT:
+
+sock-puppet: fake website to phish.
+fakenamegenerator->generates fake username and its all infos.
+
+Uses:
+1) Dark web info gathering.
+
+use encrypted emails for transactions.
+burner phone (expensive)-> a throwaway phone.
+wifi or phone  no(cheap or free)
+a couple diff virtual machines.
+A blog or website.
+VPN.
+
+website to check if your pwd is breached or not-->(have i been pwned?) / (what is my ip?) / (we leak info)
+
+=>pastebin --> to generate random password
+
+
+imp book => https://www.ultimatewindowssecurity.com/ 
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Search Engines--> we use for info searching..
+SEO ---> offers us dorks --> used for getting any useful info according to our need.
+
+eg:        site:[anything] filetypre:pdf -[otherthing you donot want in your result]
+filters:   site:*.com (searches for web with .com)/(.gov)
+	   intext: anything (searches for this text inside website)
+	   intitle: searches for this title (financial/finance)
+ 	   "text" searches for this
+
+eg:        site:pastebin.com  intext:google.com
+
+Image OSINT:
+when you download an image or text file or anything in general some of your h/w and s/w details are stored within your document.
+by social media you can gather some info example your loc, time of upload, are your docs have same loc over a long time. 
+TOOL: exiftool [options] file
+
+Reverse Image searches:
+we use images as reference to search for other related items---> googlelens
+use images to know location of target.  
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+EMAIL OSINT:
+
+hunter.io---> enter domain to get the format of domain types
+email-checker---> check email if exist or not
+
+breach.to--> email and password are dumped and download here.
+
+OSINT framework: gives us tools that we can use to carry out diff attacks or info gather.
+
+harvester --> have to give API-KEY means google/bing etc.
+spiderfoot --> paid or unpaid   (domain den or wo info provide krega) + it doesnot req. API-KEY --takes a long time(larger the data greater the time) =========>BEST TOOL
+
+=> pip3 -r requirements.txt -- to install requirments of spiderfoot
+
+
+
+
+
+
+
+
+
+
+
+
+

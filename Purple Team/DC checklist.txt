@@ -1,0 +1,157 @@
+Active Directory Check-List
+
+1)Restrict the privilage of domain admain and other privilaged groups:-
+  -------------------------------------------------------------------
+-> Try to remove the account from the DA group once your work is done or ideally create a custom role group that only has permission to perform the required changes.
+-> Domain Admin accounts are what attackers often try to seek out. If the attackers gain access to any single system, they can easily move within the network and seek higher permissions such as domain admin privileges.
+-> The same rule applies to Enterprise Admins, Backup Admins, and Schema Admin groups. 
+-> Review the privileged access with your IT team and shortlist the users with use-cases why they should be in this group. It can be challenging but is one of the best ways to reduce the attack surface. 
+
+link:- https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-f--securing-domain-admins-groups-in-active-directory
+
+
+2)Use a minimum of two accounts (Regular and Administrator account):-
+  -----------------------------------------------------------------
+-> Remember, getting away with Domain admin rights is not an easy thing. One cannot delegate rights to systems like DNS, DHCP, Exchange, Group Policy, etc so easily. This is the reason why most users have Domain Admin rights.
+-> Instead of having only one local admin with privileged access, try creating a separate regular account with no admin rights. Also, avoid adding the regular secondary account in the Domain Admins group on a permanent basis.
+-> Practice the least privileged administrative model under which all users with minimum permissions should log in to finish the work. We recommend using it for day to day tasks and removing it from the Domain Admins group once the work is done.
+-> Further, we recommend using the privileged Domain Admin account only to perform domain administrative tasks such as building domain controllers, DC authoritative restores, editing the AD schema etc.
+
+Regular User Account:- They can only perform following tasks
+--------------------
+* Read / Send emails
+* Browse the internet
+* Access files / folders either locally or via file server / OneDrive
+* Print
+* Using applications they need for their job role
+
+Administrator Account:- They can only perform following tasks
+---------------------
+* Making network changes to laptop (WIFI / DNS / Adding to Domain)
+* Adding users to Active Directory
+* Editing DNS Server Records
+* Adding Exchange email mailboxes
+* Configuring GPOs
+* Creating Hyper-V VMs
+
+
+3)Secure the Domain Administrator Account (Admin):-
+  ------------------------------------------------
+Each domain has an Administrator account responsible for domain setup and disaster recovery called the ‘Domain administrator account‘. These accounts are, by default, important members of the Domain Admins group and if the domain is the forest root domain, the account is also a member of the Enterprise Admins group.
+
+Domain Administrator:- 
+-------------------- 
+A domain administrator has the highest privileges within your Microsoft network and will be able to make the most changes on your Microsoft systems, if in the wrong hands it can cause the most damage. 
+It can modify the configuration of your Active Directory servers and can modify any content stored in Active Directory. This includes creating new users, deleting users, and changing their permissions.  This account should only be used for restoring Active Directory.
+Thus, anyone who requests access to servers or AD must use their individual admin accounts.  Those admin accounts should then be in a security group that has permissions to the servers / systems they need in order to do their job role. 
+
+
+4)Deactivate the Local Administrator Account on all Computers:-
+  -----------------------------------------------------------
+You do not require a local administrator account. So it recommended to disable the local administrator account. Firstly, even if you change its details, attackers can track the well known account via the SID. Secondly, the account is often configured with the same password and credentials on each computer.
+It is easy for attackers to track and crack the account.
+
+
+5)Install Local Administrator Password Solution (LAPS):-
+  ----------------------------------------------------
+Most administrators are switching to Local Administrator Password Solution (LAPS) for managing the local admin passwords. LAPS is a popular Microsoft tool with in built Active Directory infrastructure. The trusted tool helps set a unique password for each local admin account and stores it in Active Directory. 
+
+
+6) Try Using a Secure Admin Workstation (SAW):-
+  -------------------------------------------
+A secure admin workstation must be practiced only by privileged accounts to perform administrative tasks like group policy, AD administration, management of DNS & DHCP Servers, Office 365 Administration, etc. These are not used for the purpose of checking email or internet browsing.  Using daily use workstations can be very risky for doing admin level tasks on your network. Thus, try using a Secure Admin Workstation (SAW) to protect accounts from attackers. One can additionally use Privileged Access Workstation (PAW) and jump servers to make it more confusing for attackers to crack. Also, you can enable full disk encryption, block the internet, use a personal firewall, etc.
+
+=> To be extra careful use a computer that has a minimal OS like Windows Core Server in the cloud to be used as your secure admin workstation with the following configurations:
+-Constantly updated with latest the OS Patches
+-No internet access
+-AV / Malware detection installed
+-Firewall enabled
+-Apply any 
+-Enable disk encryption
+-Enable 2 factor authentication (2MFA)
+-Automatically delete any OS Windows profiles at least once a day
+
+
+7)Setup / Enable Audit Policy Settings with Group Policy (GPO):-
+  ------------------------------------------------------------
+Workstations are common for malicious activities. Thus, if you do not run a proper auditing and logging setting on your computers and servers, you may miss early signs of an attack. Thus, to avoid a security breach, one must Configure Audit Policy settings to the group policy, computers, and all servers.
+
+=>You should apply the following Audit Policy settings:
++ Account Logon
++ Account Management
++ Detailed tracking
++ DS Access (Only for Domain controllers)
++ Logon/Logoff
++ Object Access
++ Policy Change
++ Privilege Use
++ System
+
+
+8)Monitor Active Directory for Signs of Compromise:-
+  ------------------------------------------------
+There are various events and objects that can indicate attempts to compromise which is why you should constantly monitor Active Directory. As a result, an organization can prevent breaches from occurring or stop attacks at the initial stages. The abnormal behavior indicates a potential or in progress attack. A proactive approach to detecting any abnormal behavior on the network or compromise can save from major losses.
+examples:
+--------
+Account lockouts
+Any changes made to the Domain Admins, Enterprise Admins, and Schema Admins
+A spike in bad password attempts or locked out accounts
+Disabled antivirus software
+Privileged account activities
+Logon/Logoff events
+Use of local administrator accounts
+
+
+9) Enforce Password Complexity with Passphrases:-
+  ---------------------------------------------
+Having an 8 character long password is no more secure. Instead, we recommend using passphrases (two or more random words put together) and a minimum of 16 characters.
+
+=>Some points to consider to improve your user password security:
+Long password length of at least 16 characters
+Enable multi-factor authentication (MFA)
+Enforce password complexity
+Remember 8 password history
+Use passphrases
+Enforce lockout policy after 4 attempts
+Try using a password manager
+
+10)Use Security Group Naming Conventions:-
+   -------------------------------------
+For easy management, add permissions to resources with security groups. Secondly, avoid the use of generic names for security groups. For example, HR_Local. Generic names can be used on all types of resources and have high chances of getting tracked. Prefer going for descriptive group names to save your information from attackers and maintain all control of security.
+
+
+11)Delete Inactive Users and Computer Accounts:-
+   -------------------------------------------
+There is no point in having a bunch of unused accounts in Active Directory. Also, they can work against you, and hackers can discover and misuse them. This may also result in slowdown of group policy being applied slowing down logon times, patching, and reporting issues. So, to resolve this issue, its recommended to find and remove such unused accounts.
+
+
+12)Delete Users from the Local Administrator Group:-
+   -----------------------------------------------
+If a user has a local admin right, he/she will have complete access to the Windows Operating system. Thus, such a user must not be added as a member to the local administrator group on computers. It can be risky and cause security problems, such as downloading and installing malware, data stealing, disabling antivirus, hacking passwords, etc. By deleting users with local admin rights from the local administrator group, you can reduce threats and opportunities for attackers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

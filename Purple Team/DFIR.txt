@@ -1,0 +1,238 @@
+Digital foresnsic Investigator
+
+kahin pr fraud hojaye
+-attack hogaya (an organization)
+
+investigation include 
+-what our loophole was
+-who was involved
+-was it phishing
+-what did we lost
+
+Also
+-ik dfir ka kam nhi hai security implement krna
+-inka kam only if an attack is carried out in an organization
+
+
+FIA ko inform keye b ina we can not perform investigation
+
+-Snapshots of every exploited pcs
+-Every employees emails, organization's related 
+-whatsapp(social media)+sim ka data can also be confiscated
+-but for personal data FIA ko involve krna hoga  
+
+Ransomware agar aye to to iska hal sirf ransome pay krna hai
+
+HASH 
+-ka size 17 words
+-Hashes.com
+
+Ap ne kisi ko disclose nhi krna 
+CEO wagera se bat krna
+Managers and other are not to be answered
+
+
+jo kam kro usko document kro
+-can take weeks(depends on type of company) 
+
+CHERRYTREE(Software for documentation)
+-Tree type structure
+-Easy to understand
+
+WINAUDIT 
+-jin pc pr attack hua hai unke pore events apne pas save krdo
+-hum hr pc ke hr event ko nhi dekhte SOC SIEM SOAR madad krta
+
+SIEM SOC SOAR
+-SOAR 
+HAVEIBEENPAWNED
+
+we may have to go to DARKWEB
+https://www.darkowl.com/
+paid websides
+-zeroday attack(wo website)
+eg hawkshell 
+
+Https://virustotal.com
+
+free tools install krna ho to wo virtual machine pr krna
+
+HACKER ho to short thinking krna hai
+phele wo cheezen check kro jo tum krte agar tum hacker hote
+
+
+HONEYPOT:
+It's a sacrificial computer system that’s intended to attract cyberattacks, like a decoy. It mimics a target for hackers, 
+and uses their intrusion attempts to gain information about cybercriminals and the way they are operating or to distract them from other targets.  
+
+
+APT groups
+-ADVANCE PERSISTANCE ATTACK
+-National threat
+
+MultiNational companies me IT support keleye outsource krdete 
+humey ye kamkrna hai 
+
+hr company pay krti hai darkweb pr dekho hamara deta to leak nhi howa
+
+apne leak nhi krna(confidential rkhna hai)
+
+
+DARKWEB ACCESS KRNA 
+UBUNTU ke kernels powerful hai 
+but curpt krdeta
+Cybersecurity => LEGAL or ILLEGAL ke bech me frq bhut km hai
+
+1)
+PC jis pr koi data na ho
+or Virtual Machine (slow hai)
+or dualbooth Rufus => bootable USB 
+DualOS behtr option hai 
+
+2)
+Personal wifi, home wifi, office wifi istemal nhi krna
+parosiyon ke wifi se krna
+
+=> wifite built in kali(for wifi attack)
+=> twostep verification hr cheez pr on rkho
+
+3) 
+Tor browser istemal krna hai
+by default VPN deta hai
+BRAVE is best and secure more than google 
+.com nhi chlti darkweb me
+
+
+4) 
+Diff rooms (Chatrooms)
+Best APTs bethe hote hain (diff ways me beth kr bat krte hai)
+Darkowl or Darkweb buy krta hai
+torture wagera hota hai
+
+
+Linux me by default 
+=>anon
+
+Paret behtr hai than Kali
+Debien
+
+Kali or Parot me major frq
+Kali is for scriptkitties
+Parot DFIR wale istemal krte
+
+Kali me sari commands as root execute hotin(as admin in windows)
+
+SUDO ki full form
+SUPER USER DO
+
+PAROT me apko root me jana prta
+'~' home 
+SUDO su => goto root
+45 to 50 extra tools
+
+Debien
+wo flavours jo paid hain
+server wale kabhi bhi opensource software use nhi krte
+anonsurf
+
+spoofing 
+-dekhao kuch or hai kuch or
+-IP and Email
+-Next level spoofing is Number(SIM)
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

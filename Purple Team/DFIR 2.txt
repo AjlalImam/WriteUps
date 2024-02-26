@@ -1,0 +1,143 @@
+Pegasus (spyware) 
+israeli virus 
+India first purchased and used against Pakistan
+
+apni temp file ko hamesha clear rkho
+disk cleaner by default clean krta
+ctrl+R %temp%
+DUCKDUCKGO hr cheez bypass krdeta
+
+sponser-hacker / state-level hacker
+wo hacker jo apni country ke leye kam kre
+
+CHFI (Computer Hacking Forensic Investigator) certification
+MCQS based hoga scenerio based
+
+SOAR ka ik disadvantage hai
+ishi leye big orgaanization nhi use krtin
+soar by default hi block krdeta jb milecious activity aye to wo pore ke pore ip pool ko block krdeta  
+kun ke wo pore ke pore ip pool ko block krdeta hoskta ke jis ip se communicate krrahe hon outside organization wo bhi block hojaye
+
+ISC square -->cissp(certification)
+
+cissp kre se phele cssp kro 
+cssp certifide ho to master qualified ho
+isme prhna hoga
+mi after 5 years experience
+ishi ki website me CC ki certification krlo 
+
+OSCP for red teaming
+thora sa necay level hai
+
+code red free certification provide krta 
+DFH code red
+
+baki ke dump available hain
+
+Risk and Management
+Cissp chnd loghain
+
+CEH (basic cyber ke leye)
+
+---------------------------------------
+shoulder surfing 
+e.g: kissi ko pwd dalte dekh lia
+
+Cyber kill chain 
+1-Reconnaissance
+2-Weponization
+3-Delivery
+4-Exoitation
+5-Installation
+6-Command and Control
+7-Action on objective
+
+ap ne DFIR me ulta chlna hai
+jis ke sare cheezen update hon to wo hardened machine hai
+ports pata hone chaheye ke kon sa port open hai
+
+TOOLS TO BE INSTALLED 
+free hain to VIRTUAL MACHINE ME
+
+1-log2timeline 
+2-eventfinder2
+3-Redline
+4-MACOS_FORENSICs
+5-IOS_FORENSICS
+6-ILEAPB
+7-timestamps
+8-MEMORY_ANALYSIS
+9-Cyber_chef
+10-RDP_cache
+11-Arsnel_Email_Mounter(images me se check krta ke kissi me koi exploit to nhi)
+12-email_header_analysis
+13-AUTOUPSY
+14-FileViewer 9.5
+
+PAID TOOLS 
+
+1-MILICIOUS_PDF_DOCUMENT
+2-SHIM_CHACHE
+3-PRE_FETCH
+4-PROCDOT
+5-CYBER_TRAIGE
+6-HASHCALC(FREE OR PAID) 
+
+file patitions kis type ke hain
+windows/usb me format krte hue NTFS or FAT hote hain 
+
+splunk/MS-SENTINEL ->ab noc+soc provide krraha
+
+CHERRYTREE
+link jahan se madad li ho
+
+2002 se phele koi law nhi hai
+PECA (Pakistan Electronic Crime Act)
+2006 me implementation hui
+2014 se update horaha hai
+2022 ka naya act implement ayega
+agar Governance me jana hai to iske bare me pata hona chahey
+
+ISO (international standard)
+Certification(ishi leye imp hai ke jo bhi )
+$100/$200 ka ISO-27001(for IT) ka certification imp
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

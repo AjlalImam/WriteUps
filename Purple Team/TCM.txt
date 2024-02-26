@@ -1,0 +1,38 @@
+TCM
+Assessment: 
+1)External Network Pentest
+-most straight forward for basic person(jr. pentester).
+-external to organization.
+-based on OSINT.
+-something that we find but we must also know that there may be many people that knows more about the vuln of an organization.
+-little cheaper.
+
+2)Internal Network Pentest
+-heavily focused on Active Directory.
+
+3)Web Application Pentest
+-heavily focused on OWASP testing guidelines.
+
+4) Wireless Pentest 
+-depends on WPA2-PSK vs WPA2 Enterprise
+
+5) Physical Pentest and Social Engineering
+-methodology depends on task and goals.
+
+
+Other:
+6) Mobile
+7) IoT
+8) RedTeamEngagement
+9) PurpleTeamEngagement
+10) Plus more
+
+
+How to resolve ovpn problem 
+1) change server
+2) providers legacy default
+paste above line in .ovpn file
+
+
+
+
